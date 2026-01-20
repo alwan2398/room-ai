@@ -29,8 +29,8 @@ const Home = () => {
     <div className="w-full min-h-screen">
       <div className="flex flex-col">
         <Header />
-        <main className="relative overflow-hidden pt-28">
-          <section className="max-w-6xl mx-auto flex flex-col items-center justify-center px-5 md:px-0">
+        <main className="relative overflow-hidden pt-28 pb-10">
+          <section className="max-w-7xl mx-auto flex flex-col items-center justify-center px-5 md:px-0">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -102,7 +102,7 @@ const Home = () => {
                       key={suggestion.label}
                       suggestion={suggestion.label}
                       onClick={() => handleSuggestionClick(suggestion.value)}
-                      className="text-xs! h-7! px-2.5 pt-1!"
+                      className="text-xs! h-7! px-2.5 pt-1! w-[calc(50%-4px)] md:w-auto"
                     >
                       {suggestion.icon}
                       <span>{suggestion.label}</span>

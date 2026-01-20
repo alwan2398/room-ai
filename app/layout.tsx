@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/provider/theme-provider";
+import GlobalAuthModal from "@/components/auth/GlobalAuthModal";
 
 const sans = Plus_Jakarta_Sans({
   variable: "--font-jakarta-sans",
@@ -33,6 +34,7 @@ const RootLayout = ({
           disableTransitionOnChange
         >
           {children}
+          <GlobalAuthModal />
         </ThemeProvider>
       </body>
     </html>

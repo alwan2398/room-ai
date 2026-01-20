@@ -8,8 +8,10 @@ import {
   InputGroupTextarea,
 } from "../ui/input-group";
 import { cn } from "@/lib/utils";
-import { CornerDownLeftIcon, Loader2 } from "lucide-react";
+import { CornerDownLeftIcon } from "lucide-react";
 import { Spinner } from "../ui/spinner";
+import { useSession } from "@/lib/auth-client";
+import { useAuthStore } from "@/store/useAuthStore";
 
 const AiPromptInput = ({
   className,
@@ -19,16 +21,32 @@ const AiPromptInput = ({
   isLoading,
   hideSubmitButton = false,
 }: AiPromptInputProps) => {
+  const { data: session } = useSession();
+  const { openAuthModal } = useAuthStore();
+
+  const handleSubmit = () => {
+    if (!session) {
+      openAuthModal("signup");
+      return;
+    }
+    console.log("Proceed to generation");
+    onSubmit?.();
+  };
+
   return (
-    <div className="bg-background">
+    <div className="bg-background rounded-3xl">
       <InputGroup
         className={cn(
-          "min-h-[172px] bg-background rounded-3xl",
+          "min-h-[172px] bg-background rounded-3xl cursor-text",
           className && className,
         )}
+        onClick={(e) => {
+          if ((e.target as HTMLElement).closest("button")) return;
+          e.currentTarget.querySelector("textarea")?.focus();
+        }}
       >
         <InputGroupTextarea
-          className="text-base! py-2.5"
+          className="text-base! py-2.5 focus:placeholder-transparent"
           placeholder="Masukkan Prompt Anda..."
           value={promptText}
           onChange={(e) => setPromptText(e.target.value)}
@@ -43,7 +61,7 @@ const AiPromptInput = ({
               size="sm"
               className=""
               disabled={!promptText?.trim() || isLoading}
-              onClick={onSubmit}
+              onClick={handleSubmit}
             >
               {isLoading ? (
                 <Spinner />
