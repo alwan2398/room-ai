@@ -5,7 +5,7 @@ export interface NavItem {
 
 export const navItems: NavItem[] = [
   { name: "Home", href: "/" },
-  { name: "Templates", href: "/twmplates" },
+  { name: "Templates", href: "/templates" },
   { name: "Pricing", href: "/pricing" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },

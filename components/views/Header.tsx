@@ -99,10 +99,10 @@ const Header = () => {
               href="/"
               className="flex items-center space-x-2"
             >
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-blue-700">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-blue-500 to-blue-700">
                 <Sparkles className="h-5 w-5 text-white" />
               </div>
-              <span className="bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-xl font-bold text-transparent">
+              <span className="bg-linear-to-r from-blue-500 to-blue-700 bg-clip-text text-xl font-bold text-transparent">
                 Room AI
               </span>
             </Link>
@@ -171,7 +171,7 @@ const Header = () => {
                 >
                   <button
                     onClick={() => openAuthModal("signup")}
-                    className="inline-flex items-center space-x-2 rounded-full bg-gradient-to-r from-blue-500 to-blue-700 px-6 py-2.5 font-medium text-white transition-all duration-200 hover:shadow-lg cursor-pointer"
+                    className="inline-flex items-center space-x-2 rounded-full bg-linear-to-br from-blue-500 to-blue-700 px-6 py-2.5 font-medium text-white transition-all duration-200 hover:shadow-lg cursor-pointer"
                   >
                     <span>Mulai Gratis</span>
                     <ArrowRight className="h-4 w-4" />
@@ -261,7 +261,7 @@ const Header = () => {
                           openAuthModal("signup");
                           setIsMobileMenuOpen(false);
                         }}
-                        className="block w-full rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 py-2.5 text-center font-medium text-white transition-all duration-200 hover:shadow-lg"
+                        className="block w-full rounded-lg bg-linear-to-br from-blue-500 to-blue-700 py-2.5 text-center font-medium text-white transition-all duration-200 hover:shadow-lg"
                       >
                         Mulai Gratis
                       </button>

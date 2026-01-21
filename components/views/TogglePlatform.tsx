@@ -16,7 +16,7 @@ const TogglePlatform = ({ value, setValue, disabled }: TogglePlatformProps) => {
         <ToggleGroupItem
           value="application"
           disabled={disabled}
-          className="data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm transition-all duration-200 px-4 py-2 hover:bg-background/50 data-[state=on]:hover:bg-background"
+          className="data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm transition-all duration-200 px-4 py-2 hover:bg-background/50 data-[state=on]:hover:bg-background cursor-pointer"
         >
           <Smartphone className="size-4" /> Aplikasi
         </ToggleGroupItem>
@@ -24,7 +24,7 @@ const TogglePlatform = ({ value, setValue, disabled }: TogglePlatformProps) => {
         <ToggleGroupItem
           value="website"
           disabled={disabled}
-          className="data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm transition-all duration-200 px-4 py-2 hover:bg-background/50 data-[state=on]:hover:bg-background"
+          className="data-[state=on]:bg-background data-[state=on]:text-foreground data-[state=on]:shadow-sm transition-all duration-200 px-4 py-2 hover:bg-background/50 data-[state=on]:hover:bg-background cursor-pointer"
         >
           <Monitor className="size-4" /> Website
         </ToggleGroupItem>

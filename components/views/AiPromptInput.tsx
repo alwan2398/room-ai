@@ -46,7 +46,7 @@ const AiPromptInput = ({
         }}
       >
         <InputGroupTextarea
-          className="text-base! py-2.5 focus:placeholder-transparent"
+          className="text-base! py-2.5 focus:placeholder-transparent placeholder:text-zinc-500"
           placeholder="Masukkan Prompt Anda..."
           value={promptText}
           onChange={(e) => setPromptText(e.target.value)}
@@ -59,7 +59,7 @@ const AiPromptInput = ({
             <InputGroupButton
               variant="default"
               size="sm"
-              className=""
+              className="cursor-pointer group hover:text-white"
               disabled={!promptText?.trim() || isLoading}
               onClick={handleSubmit}
             >

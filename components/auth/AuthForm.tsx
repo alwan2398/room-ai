@@ -95,9 +95,13 @@ const AuthForm = ({ defaultTab = "signin", onSuccess }: AuthFormProps) => {
   return (
     <div className="w-full max-w-md mx-auto">
       <Tabs defaultValue={defaultTab || view} className="w-full">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="signin">Masuk</TabsTrigger>
-          <TabsTrigger value="signup">Daftar</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-2 bg-zinc-800">
+          <TabsTrigger value="signin" className="cursor-pointer">
+            Masuk
+          </TabsTrigger>
+          <TabsTrigger value="signup" className="cursor-pointer">
+            Daftar
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="signin" className="space-y-4 mt-4">
@@ -108,6 +112,7 @@ const AuthForm = ({ defaultTab = "signin", onSuccess }: AuthFormProps) => {
             <div className="space-y-2">
               <Label htmlFor="signin-email">Email</Label>
               <Input
+                className="placeholder:text-zinc-500"
                 id="signin-email"
                 type="email"
                 placeholder="email@example.com"
@@ -122,6 +127,7 @@ const AuthForm = ({ defaultTab = "signin", onSuccess }: AuthFormProps) => {
             <div className="space-y-2">
               <Label htmlFor="signin-password">Password</Label>
               <Input
+                className="placeholder:text-zinc-500"
                 id="signin-password"
                 type="password"
                 placeholder="••••••••"
@@ -134,7 +140,11 @@ const AuthForm = ({ defaultTab = "signin", onSuccess }: AuthFormProps) => {
               )}
             </div>
             {error && <p className="text-sm text-destructive">{error}</p>}
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button
+              type="submit"
+              className="w-full bg-blue-700 text-white cursor-pointer"
+              disabled={isLoading}
+            >
               {isLoading ? (
                 <Loader2 className="size-4 animate-spin" />
               ) : (
@@ -155,7 +165,7 @@ const AuthForm = ({ defaultTab = "signin", onSuccess }: AuthFormProps) => {
           <Button
             type="button"
             variant="outline"
-            className="w-full"
+            className="w-full cursor-pointer"
             onClick={handleGoogleSignIn}
             disabled={isLoading}
           >
@@ -189,6 +199,7 @@ const AuthForm = ({ defaultTab = "signin", onSuccess }: AuthFormProps) => {
             <div className="space-y-2">
               <Label htmlFor="signup-name">Nama</Label>
               <Input
+                className="placeholder:text-zinc-500"
                 id="signup-name"
                 type="text"
                 placeholder="Nama lengkap"
@@ -203,6 +214,7 @@ const AuthForm = ({ defaultTab = "signin", onSuccess }: AuthFormProps) => {
             <div className="space-y-2">
               <Label htmlFor="signup-email">Email</Label>
               <Input
+                className="placeholder:text-zinc-500"
                 id="signup-email"
                 type="email"
                 placeholder="email@example.com"
@@ -217,6 +229,7 @@ const AuthForm = ({ defaultTab = "signin", onSuccess }: AuthFormProps) => {
             <div className="space-y-2">
               <Label htmlFor="signup-password">Password</Label>
               <Input
+                className="placeholder:text-zinc-500"
                 id="signup-password"
                 type="password"
                 placeholder="••••••••"
@@ -229,7 +242,11 @@ const AuthForm = ({ defaultTab = "signin", onSuccess }: AuthFormProps) => {
               )}
             </div>
             {error && <p className="text-sm text-destructive">{error}</p>}
-            <Button type="submit" className="w-full" disabled={isLoading}>
+            <Button
+              type="submit"
+              className="w-full cursor-pointer bg-blue-700 text-white"
+              disabled={isLoading}
+            >
               {isLoading ? (
                 <Loader2 className="size-4 animate-spin" />
               ) : (
@@ -250,7 +267,7 @@ const AuthForm = ({ defaultTab = "signin", onSuccess }: AuthFormProps) => {
           <Button
             type="button"
             variant="outline"
-            className="w-full"
+            className="w-full cursor-pointer"
             onClick={handleGoogleSignIn}
             disabled={isLoading}
           >

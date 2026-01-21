@@ -7,6 +7,7 @@ import { signIn } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
+import Link from "next/link";
 
 const GlobalAuthModal = () => {
   const { isOpen, closeAuthModal } = useAuthStore();
@@ -34,7 +35,7 @@ const GlobalAuthModal = () => {
       <DialogContent className="sm:max-w-[400px] p-0 overflow-hidden bg-background border-border gap-0">
         <div className="p-8 flex flex-col items-center">
           <div className="mb-6 flex flex-col items-center text-center space-y-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-blue-500 to-purple-600 shadow-lg">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-linear-to-br from-blue-500 to-cyan-600 shadow-lg">
               <Sparkles className="h-6 w-6 text-white" />
             </div>
             <div className="space-y-1">
@@ -50,7 +51,7 @@ const GlobalAuthModal = () => {
           <div className="w-full space-y-3">
             <Button
               variant="outline"
-              className="w-full relative h-11 rounded-xl border-input hover:bg-muted/50 font-medium"
+              className="w-full relative h-11 rounded-xl border-input hover:bg-muted/50 font-medium cursor-pointer"
               onClick={handleGoogleSignIn}
               disabled={isLoading}
             >
@@ -88,7 +89,7 @@ const GlobalAuthModal = () => {
 
             <Button
               variant="secondary"
-              className="w-full h-11 rounded-xl font-medium"
+              className="w-full h-11 rounded-xl font-medium cursor-pointer"
               onClick={handleEmailContinue}
             >
               Lanjutkan dengan Email
@@ -97,13 +98,13 @@ const GlobalAuthModal = () => {
 
           <div className="mt-8 text-center text-xs text-muted-foreground px-4 leading-relaxed">
             Dengan melanjutkan, Anda menyetujui{" "}
-            <a href="#" className="underline hover:text-foreground">
+            <Link href="/" className="underline hover:text-foreground">
               Syarat Layanan
-            </a>{" "}
+            </Link>{" "}
             dan{" "}
-            <a href="#" className="underline hover:text-foreground">
+            <Link href="/" className="underline hover:text-foreground">
               Kebijakan Privasi
-            </a>{" "}
+            </Link>{" "}
             kami.
           </div>
         </div>
