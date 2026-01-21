@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/provider/theme-provider";
+import { QueryProvider } from "@/components/provider/query-provider";
+import { Toaster } from "@/components/ui/sonner";
 import GlobalAuthModal from "@/components/auth/GlobalAuthModal";
 
 const sans = Plus_Jakarta_Sans({
@@ -33,8 +35,11 @@ const RootLayout = ({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <GlobalAuthModal />
+          <QueryProvider>
+            {children}
+            <GlobalAuthModal />
+            <Toaster />
+          </QueryProvider>
         </ThemeProvider>
       </body>
     </html>

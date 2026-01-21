@@ -11,15 +11,23 @@ import {
   wordVariants,
 } from "@/constant/AnimateConst";
 import { suggestionsDesign } from "@/constant/SuggestionConst";
+import { useCreateProject } from "@/hooks/use-create-project";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Home = () => {
   const [promptText, setPromptText] = useState<string>("");
   const [platformValue, setPlatformValue] = useState<string>("website");
+  const { mutate: createProject, isPending } = useCreateProject();
 
   const handleSuggestionClick = (value: string) => {
     setPromptText(value);
+  };
+
+  const handleSubmit = () => {
+    // Map toggle value to schema type
+    const type = platformValue === "application" ? "app" : "website";
+    createProject({ prompt: promptText, type });
   };
 
   const text1 = "Desain Website Dan Aplikasi".split(" ");
@@ -87,8 +95,8 @@ const Home = () => {
                   className="ring-2 ring-primary mt-6"
                   promptText={promptText}
                   setPromptText={setPromptText}
-                  onSubmit={() => {}}
-                  isLoading={false}
+                  onSubmit={handleSubmit}
+                  isLoading={isPending}
                 />
               </motion.div>
 
