@@ -17,8 +17,8 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "room - UI Design automaticon",
-  description: "room ai website UI Design builder for anything",
+  title: "Room - UI Design Builder",
+  description: "Room AI website UI Design builder for anything",
 };
 
 const RootLayout = ({
